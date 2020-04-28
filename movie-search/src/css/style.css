@@ -92,8 +92,7 @@ header {
   width: 90px;
 }
 
-.search-btn:active,
-.search-btn:focus {
+.search-btn:active, .search-btn:focus {
   outline: 0;
   border: 0;
 }
@@ -143,11 +142,70 @@ header {
   color: rgb(214, 44, 26);
 }
 
-.swiper {
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  display: block;
+  /* width: 300px !important;
+  max-width: 300px; */
+  border: 0;
+  margin: 10px 0px;
+  overflow: hidden;
+  margin-right: 50px;
+}
+
+.card-title {
+  display: block;
+  height: 43px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  background-color: #fff;
+  color: #000;
+  text-align: center;
+  font-size: 24px;
+  padding: 15px;
+  white-space: pre-wrap;
+  text-overflow: ellipsis;
+}
+
+.card-poster {
+  height: 445px;
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.card-year {
+  background-color: #fff;
+  color: #000;
+  text-align: center;
+  padding: 15px;
+  padding-bottom: 5px;
+}
+
+.card-imbd {
+  text-align: center;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+/* .swiper {
   position: relative;
 }
 
-.swiper-arrow {
+.swiper-button {
   position: absolute;
   width: 70px;
   height: 445px;
@@ -159,16 +217,17 @@ header {
   transition: .3s;
 }
 
-.swiper-arrow-next {
+.swiper-button-next {
   background-image: url(../img/next.svg);
   right: -70px;
 }
 
-.swiper-arrow-prev {
+.swiper-button-prev {
   background-image: url(../img/prev.svg);
   left: -70px;
-}
+} */
 
+/*
 .swiper-container {
   margin-left: auto;
   margin-right: auto;
@@ -177,17 +236,7 @@ header {
   list-style: none;
   padding: 0;
   z-index: 1;
-}
-
-
-
-
-
-
-
-
-
-
+} */
 
 footer {
   width: 100%;
