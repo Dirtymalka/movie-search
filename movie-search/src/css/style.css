@@ -112,6 +112,101 @@ header {
   opacity: 1;
 }
 
+.keyboard-container {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  width: 590px;
+  top: 60px;
+  left: 25%;
+  font-size: 1.5rem;
+  line-height: 15px;
+  z-index: 5;
+  background: #2C3E50;
+  display: none;
+}
+
+.key {
+  box-sizing: border-box;
+  width: 35px;
+  height: 35px;
+  margin: 5px;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+  border: 1px solid #f9f9f9;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  color: black;
+}
+
+.key:hover {
+  background-color: rgba(176, 193, 219, 0.8);
+  color: rgb(255, 255, 255);
+}
+
+.key.tap-shift {
+  flex-direction: column;
+}
+
+.shift {
+  width: 80px;
+}
+
+.shift.active {
+  background: rgba(176, 193, 219, 0.8);
+  color: rgb(255, 255, 255);
+}
+
+.enter {
+  width: 83px;
+}
+
+.space {
+  width: 400px;
+}
+
+.backspace {
+  width: 82px;
+}
+
+.left, .right {
+  width: 50px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.right {
+  background-image: url(../img/right.svg);
+  background-position: right;
+}
+
+.left {
+  background-image: url(../img/left.svg);
+}
+
+.lang-change {
+  width: 45px;
+}
+
+.key:active {
+  animation: anim-effect 0.5s ease-out forwards;
+}
+
+@keyframes anim-effect {
+  0% {
+      opacity: 0.5;
+      transform: scale3d(0.7, 0.7, 1);
+  }
+  to {
+      opacity: 1;
+      transform: scale3d(1, 1, 1);
+  }
+}
+
 .clear {
   position: absolute;
   width: 48px;
@@ -145,6 +240,8 @@ header {
 .swiper-container {
   width: 100%;
   height: 100%;
+  padding: 0 14px;
+  box-sizing: content-box;
 }
 
 .swiper-slide {
@@ -201,6 +298,14 @@ header {
   margin-bottom: 20px;
 }
 
+.swiper-button-next {
+  right: 0px;
+}
+
+.swiper-button-prev {
+  left: 0px;
+}
+
 /* .swiper {
   position: relative;
 }
@@ -225,7 +330,7 @@ header {
 .swiper-button-prev {
   background-image: url(../img/prev.svg);
   left: -70px;
-} */
+}*/
 
 /*
 .swiper-container {
