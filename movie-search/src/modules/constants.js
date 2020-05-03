@@ -19,3 +19,8 @@ export const ENGLISH_VALUE = 'en';
 export const RUSSIAN_VALUE = 'ru';
 
 export const INPUT_SEARCH = document.querySelector('.search-input');
+
+export const BUTTON_SEARCH = document.querySelector('.search-button');
+
+export const FILM_NAME = 'filmName';
+export const PAGE_NUMBER = 'pageNumber';

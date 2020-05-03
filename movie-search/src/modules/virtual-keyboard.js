@@ -1,14 +1,5 @@
 import { keyLayoutEnglishUnShift, keyLayoutEnglishShift, keyLayoutEnglishKeys, keyLayoutRussianUnShift, keyLayoutRussianShift, keyLayoutRussianKeys, KEY_TO_LANGUAGE, ENGLISH_VALUE, RUSSIAN_VALUE, INPUT_SEARCH } from './constants';
-
-// Create Container
-// const container = document.createElement('div');
-// container.className = 'keyboard-container';
-// document.body.append(container);
-// const containerBoard = document.querySelector('.keyboard-container');
-
-
-
-
+import { searchHandler } from './search';
 
 export default class Keyboard {
   constructor() {
@@ -185,6 +176,10 @@ export default class Keyboard {
     this.inputSearch.selectionEnd = this.cursor - 1;
   }
 
+  clickOnEnter() {
+    searchHandler();
+  }
+
   clickOnDel() {
     if (this.inputSearch.selectionStart === this.inputSearch.value.length) {
       return;
@@ -246,95 +241,3 @@ export default class Keyboard {
     });
   };
 }
-
-
-
-
-
-// Create Keys
-// function createKeys(keyLayoutUnShift, keyLayoutShift, keyLayoutKeys) {
-//   if (keyLayoutUnShift === keyLayoutEnglishUnShift) {
-//     containerBoard.classList.add('english');
-//   }
-//   if (keyLayoutUnShift === keyLayoutRussianUnShift) {
-//     containerBoard.classList.add('russian');
-//   }
-//   for (let i = 0; i < keyLayoutUnShift.length; i += 1) {
-//     const div = document.createElement('div');
-//     div.className = 'key tap-shift';
-//     containerBoard.append(div);
-//     const sup = document.createElement('sup');
-//     sup.innerHTML = keyLayoutShift[i];
-//     div.append(sup);
-//     const span = document.createElement('span');
-//     span.innerHTML = keyLayoutUnShift[i];
-//     div.append(span);
-//   }
-
-//   keyLayoutKeys.forEach((key) => {
-//     const div = document.createElement('div');
-//     div.className = 'key';
-//     const divClassList = (f, a) => {
-//       div.classList.add(f);
-//       div.classList.add(a);
-//     };
-//     if (key === 'backspace') {
-//       divClassList(key.toLowerCase(), 'special');
-//     }
-//     if (key === 'CapsLock') {
-//       divClassList(key.toLowerCase(), 'special');
-//     }
-//     if (key === 'Tab') {
-//       divClassList(key.toLowerCase(), 'special');
-//     }
-//     if (key === 'Shift') {
-//       divClassList(key.toLowerCase(), 'special');
-//     }
-//     if (key === 'Ctrl') {
-//       divClassList(key.toLowerCase(), 'special');
-//     }
-//     if (key === 'Win') {
-//       divClassList(key.toLowerCase(), 'special');
-//     }
-//     if (key === 'Alt') {
-//       divClassList(key.toLowerCase(), 'special');
-//     }
-//     if (key === 'space') {
-//       divClassList(key.toLowerCase(), 'special');
-//     }
-//     if (key === 'Left') {
-//       divClassList(key.toLowerCase(), 'special');
-//     }
-//     if (key === 'Up') {
-//       divClassList(key.toLowerCase(), 'special');
-//     }
-//     if (key === 'Right') {
-//       divClassList(key.toLowerCase(), 'special');
-//     }
-//     if (key === 'Down') {
-//       divClassList(key.toLowerCase(), 'special');
-//     }
-//     if (key === 'Enter') {
-//       divClassList(key.toLowerCase(), 'special');
-//     }
-//     if (key === 'Del') {
-//       divClassList(key.toLowerCase(), 'special');
-//     }
-//     div.innerHTML = key;
-//     containerBoard.append(div);
-//   });
-
-//   document.querySelector('.right').textContent = '';
-//   document.querySelector('.up').textContent = '';
-//   document.querySelector('.left').textContent = '';
-//   document.querySelector('.down').textContent = '';
-// }
-
-
-// if (localStorage.getItem(KEY_TO_LANGUAGE) === ENGLISH_VALUE) {
-//   createKeys(keyLayoutEnglishUnShift, keyLayoutEnglishShift, keyLayoutEnglishKeys);
-// } else if (localStorage.getItem(KEY_TO_LANGUAGE) === RUSSIAN_VALUE) {
-//   createKeys(keyLayoutRussianUnShift, keyLayoutRussianShift, keyLayoutRussianKeys);
-// } else {
-//   createKeys(keyLayoutEnglishUnShift, keyLayoutEnglishShift, keyLayoutEnglishKeys);
-// }
