@@ -1,13 +1,14 @@
-import Swiper from 'swiper';
+// import Swiper from 'swiper';
 
 const swiper = new Swiper(document.querySelector('.swiper-container'), {
+  init: false,
+  dynamicBullets: true,
+  dynamicMainBullets: 10,
   slidesPerView: 4,
   spaceBetween: 30,
   slidesPerGroup: 1,
-  loop: true,
-  // loopFillGroupWithBlank: true,
-  // preloadImages: false,
-  // lazy: true,
+  // loop: true,
+  grabCursor: true,
   pagination: {
     el: document.querySelector('.swiper-pagination'),
     clickable: true,
@@ -16,6 +17,8 @@ const swiper = new Swiper(document.querySelector('.swiper-container'), {
     nextEl: document.querySelector('.swiper-button-next'),
     prevEl: document.querySelector('.swiper-button-prev'),
   },
+  // preloadImages: true,
+  // updateOnImagesReady: true,
   breakpoints: {
     1440: {
       slidesPerView: 4,
@@ -38,9 +41,3 @@ const swiper = new Swiper(document.querySelector('.swiper-container'), {
 
 
 export default swiper;
-
-
-// $(document).ready(function(){
-//   $('.swiper-wrapper').slick({
-//   });
-// });

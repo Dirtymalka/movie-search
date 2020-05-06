@@ -24,3 +24,4 @@ export const BUTTON_SEARCH = document.querySelector('.search-button');
 
 export const FILM_NAME = 'filmName';
 export const PAGE_NUMBER = 'pageNumber';
+export const DEFAULT_PAGE = '1';
