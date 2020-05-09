@@ -22,6 +22,15 @@ export const INPUT_SEARCH = document.querySelector('.search-input');
 
 export const BUTTON_SEARCH = document.querySelector('.search-button');
 
+export const MICROPHONE = document.querySelector('.micro');
+
+export const CLEAR_BUTTON = document.querySelector('.clear');
+
 export const FILM_NAME = 'filmName';
 export const PAGE_NUMBER = 'pageNumber';
 export const DEFAULT_PAGE = '1';
+export const DEFAULT_FILM_NAME = 'batman';
+
+export const LANGUAGE_CHECK = /(^[А-я0-9\s]+)(?!.*[A-z])$/;
+
+// const regexpEnOrRu = /(^[А-я0-9\s]+)(?!.*[A-z])$|(^[A-z0-9\s]+)(?!.*[А-я])$/;

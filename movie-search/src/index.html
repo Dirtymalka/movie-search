@@ -20,9 +20,11 @@
     <main>
         <div class="main-container">
             <form action="" class="search">
-                <input type="search" class="search-input" placeholder="search movie" autofocus>
+                <input type="text" class="search-input" placeholder="search movie" autofocus>
                 <button class="search-button" type="submit">Search</button>
                 <span data-name="clear" class="clear"></span>
+                <div class="loader"></div>
+                <span class="micro"></span>
                 <span data-name="keyboard" class="keyboard"></span>
             </form>
             <p class="info"></p>
@@ -31,8 +33,6 @@
                     <div class="swiper-wrapper">
                     </div>
                     <div class="swiper-pagination"></div>
-                    <!-- <div class="swiper-button swiper-button-next"></div>
-                    <div class="swiper-button swiper-button-prev"></div> -->
                 </div>
                 <div class="swiper-button swiper-button-next"></div>
                 <div class="swiper-button swiper-button-prev"></div>

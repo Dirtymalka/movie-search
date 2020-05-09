@@ -1,7 +1,14 @@
 const addLoader = () => {
-  const swiperContainer = document.querySelector('.swiper-container');
-  const loaderContainer = '<div id="fountainG"><div id="fountainG_1" class="fountainG"></div><div id="fountainG_2" class="fountainG"></div><div id="fountainG_3" class="fountainG"></div><div id="fountainG_4" class="fountainG"></div><div id="fountainG_5" class="fountainG"></div><div id="fountainG_6" class="fountainG"></div><div id="fountainG_7" class="fountainG"></div><div id="fountainG_8" class="fountainG"></div></div>';
-  swiperContainer.insertAdjacentHTML('afterbegin', loaderContainer);
+  const searchContainer = document.querySelector('.loader');
+  const loaderContainer = '<div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>';
+  searchContainer.insertAdjacentHTML('beforeend', loaderContainer);
 }
 
-export default addLoader;
+const removeLoader = () => {
+  const loader = document.querySelector('.lds-spinner') || '';
+  if (loader) {
+    document.querySelector('.loader').innerHTML = '';
+  }
+}
+
+export { addLoader, removeLoader };

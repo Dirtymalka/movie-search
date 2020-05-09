@@ -1,5 +1,5 @@
 import { keyLayoutEnglishUnShift, keyLayoutEnglishShift, keyLayoutEnglishKeys, keyLayoutRussianUnShift, keyLayoutRussianShift, keyLayoutRussianKeys, KEY_TO_LANGUAGE, ENGLISH_VALUE, RUSSIAN_VALUE, INPUT_SEARCH } from './constants';
-import { searchHandler } from './search';
+import searchHandler from './search';
 
 export default class Keyboard {
   constructor() {
@@ -178,6 +178,7 @@ export default class Keyboard {
 
   clickOnEnter() {
     searchHandler();
+    this.addClassActive()
   }
 
   clickOnDel() {
@@ -240,4 +241,8 @@ export default class Keyboard {
       keyS.querySelector('span').textContent = supKeyContent;
     });
   };
+
+  addClassActive() {
+    document.querySelector('.keyboard-container').classList.toggle('active');
+  }
 }
