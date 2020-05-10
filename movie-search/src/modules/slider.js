@@ -1,8 +1,4 @@
-// import Swiper from 'swiper';
-import * as constants from './constants';
-import getMovieCards from './movie-cards';
-
-
+import Swiper from 'swiper';
 
 const swiper = new Swiper(document.querySelector('.swiper-container'), {
   init: false,
@@ -37,15 +33,4 @@ const swiper = new Swiper(document.querySelector('.swiper-container'), {
   },
 });
 
-const endSliderHandler = () => {
-  const slides = document.querySelectorAll('.card');
-  if (swiper.activeIndex >= slides.length - 7) {
-    console.log('end')
-    const numberPage = localStorage.getItem(constants.PAGE_NUMBER);
-    const filmName = localStorage.getItem(constants.FILM_NAME);
-    getMovieCards(filmName, +numberPage + 1);
-    localStorage.setItem(constants.PAGE_NUMBER, +numberPage + 1);
-  }
-}
-
-export { swiper, endSliderHandler };
+export default swiper;

@@ -30,7 +30,7 @@ header {
 }
 
 .header-container h1 {
-  font-size: 40px;
+  font-size: 4rem;
   font-weight: 900;
   text-align: center;
   padding: 0;
@@ -74,7 +74,7 @@ header {
   color: rgb(123, 138, 139);
   cursor: text;
   display: block;
-  font-size: 22px;
+  font-size: 2.2rem;
   font-weight: 400;
   height: 45px;
   padding: 8px 15px;
@@ -132,6 +132,11 @@ header {
   cursor: pointer;
   opacity: .8;
   transition: .2s;
+}
+
+.micro.active {
+  background-image: url(../img/micro-active.png);
+  opacity: 1;
 }
 
 .micro:hover {
@@ -218,6 +223,10 @@ header {
   width: 400px;
 }
 
+.lang-change {
+  width: 45px;
+}
+
 .backspace {
   width: 82px;
 }
@@ -235,10 +244,6 @@ header {
 
 .left {
   background-image: url(../img/left.svg);
-}
-
-.lang-change {
-  width: 45px;
 }
 
 .key:active {
@@ -261,7 +266,7 @@ header {
   margin: 0;
   padding: 0 10px;
   margin-bottom: 30px;
-  font-size: 24px;
+  font-size: 2.4rem;
   font-weight: 400;
   line-height: 40px;
   text-align: center;
@@ -281,7 +286,7 @@ header {
 
 .swiper-slide {
   text-align: center;
-  font-size: 18px;
+  font-size: 1.8rem;
   background: #fff;
   display: flex;
   justify-content: center;
@@ -400,7 +405,6 @@ footer {
 }
 
 .lds-spinner div {
-  /* transform-origin: 40px 40px; */
   animation: lds-spinner 1.2s linear infinite;
 }
 

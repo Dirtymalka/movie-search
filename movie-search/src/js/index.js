@@ -1,8 +1,8 @@
 import '../css/style.css';
-import { swiper, endSliderHandler } from '../modules/slider';
+import swiper from '../modules/slider';
 import Keyboard from '../modules/virtual-keyboard';
 import * as constants from '../modules/constants';
-import getMovieCards from '../modules/movie-cards';
+import { getMovieCards, endSliderHandler } from '../modules/movie-cards';
 import searchHandler from '../modules/search';
 import { addMicrophoneHandler, recognition, addSpeakHandler } from '../modules/speak-search';
 

@@ -1,5 +1,5 @@
 import { INPUT_SEARCH, FILM_NAME, PAGE_NUMBER, DEFAULT_PAGE, DEFAULT_FILM_NAME } from './constants';
-import { swiper } from './slider';
+import swiper from './slider';
 
 const createCard = (filmLink, titleText, posterImg, year, rating) => {
   const card = document.createElement('div');
@@ -17,12 +17,6 @@ async function appendCards(dataFilms) {
     swiper.removeAllSlides();
   }
   dataFilms.forEach((film) => {
-    // const img = new Image();
-    // img.src = film.poster;
-    // img.className = 'card-poster';
-    // console.log(img);
-    // img.onload = () => {
-    //   console.log('process');
     const cardFilm = createCard(film.imbd, film.title, film.poster, film.year, film.rating);
     swiper.appendSlide(cardFilm);
   });

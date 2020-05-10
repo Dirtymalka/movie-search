@@ -1,4 +1,4 @@
-import getMovieCards from './movie-cards';
+import { getMovieCards } from './movie-cards';
 import { INPUT_SEARCH, FILM_NAME, DEFAULT_PAGE } from './constants';
 
 function getTranslateTitle(word) {

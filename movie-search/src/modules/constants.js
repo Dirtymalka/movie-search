@@ -32,5 +32,3 @@ export const DEFAULT_PAGE = '1';
 export const DEFAULT_FILM_NAME = 'batman';
 
 export const LANGUAGE_CHECK = /(^[А-я0-9\s]+)(?!.*[A-z])$/;
-
-// const regexpEnOrRu = /(^[А-я0-9\s]+)(?!.*[A-z])$|(^[A-z0-9\s]+)(?!.*[А-я])$/;

@@ -1,12 +1,12 @@
 import { INPUT_SEARCH, FILM_NAME, PAGE_NUMBER, DEFAULT_PAGE, DEFAULT_FILM_NAME } from './constants';
 import { addLoader, removeLoader } from './loader-indicator';
 import appendCards from './creatingCards';
-import { swiper, endSliderHandler } from './slider';
+import swiper from './slider';
 
 
 async function getRating(card) {
   const cardFilm = card;
-  const url = `https://www.omdbapi.com/?i=${cardFilm.imbd}&apikey=15806dba`;
+  const url = `https://www.omdbapi.com/?i=${cardFilm.imbd}&apikey=4c7b0119`;
   const res = await fetch(url);
   const data = await res.json();
   const rating = await data.imdbRating;
@@ -44,16 +44,14 @@ async function getMovieCards(filmName, page) {
     addLoader();
   }
   try {
-    const url = `https://www.omdbapi.com/?s=${filmName}&page=${page}&apikey=15806dba`;
+    const url = `https://www.omdbapi.com/?s=${filmName}&page=${page}&apikey=4c7b0119`;
     const res = await fetch(url);
     const data = await res.json();
-    console.log(data)
     if (data.Response === "False") {
       if (localStorage.getItem(PAGE_NUMBER) !== '1' && data.Error === 'Movie not found!') {
         return;
       }
       removeLoader();
-      console.log(data.Error)
       document.querySelector('.info').innerHTML = data.Error;
       INPUT_SEARCH.value = '';
     } else {
@@ -61,13 +59,22 @@ async function getMovieCards(filmName, page) {
       const cardsFilms = await createCardsFilm(films);
       await appendCards(cardsFilms);
       await removeLoader();
-      // await swiper.update();
+      await swiper.update();
     }
   } catch (error) {
-    console.log(error);
     removeLoader();
     document.querySelector('.info').innerHTML = 'Sorry, something went wrong, we are already fixing the error.';
   }
 }
 
-export default getMovieCards;
+const endSliderHandler = () => {
+  const slides = document.querySelectorAll('.card');
+  if (swiper.activeIndex >= slides.length - 7) {
+    const numberPage = localStorage.getItem(PAGE_NUMBER);
+    const filmName = localStorage.getItem(FILM_NAME);
+    getMovieCards(filmName, +numberPage + 1);
+    localStorage.setItem(PAGE_NUMBER, +numberPage + 1);
+  }
+}
+
+export { getMovieCards, endSliderHandler };
