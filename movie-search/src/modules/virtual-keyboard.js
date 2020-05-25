@@ -1,3 +1,6 @@
+/* eslint no-param-reassign: 'error' */
+/* eslint class-methods-use-this: ['error', { 'exceptMethods': ['changeToUpperCase', 'changeToLowerCase', 'tapOnShiftSpecial', 'addClassActive'] }] */
+
 import { keyLayoutEnglishUnShift, keyLayoutEnglishShift, keyLayoutEnglishKeys, keyLayoutRussianUnShift, keyLayoutRussianShift, keyLayoutRussianKeys, KEY_TO_LANGUAGE, ENGLISH_VALUE, RUSSIAN_VALUE, INPUT_SEARCH } from './constants';
 import searchHandler from './search';
 
@@ -216,29 +219,26 @@ export default class Keyboard {
 
   changeToUpperCase(keys) {
     keys.forEach((letter) => {
-      const letterF = letter;
       if (!letter.classList.contains('tap-shift') && !letter.classList.contains('special')) {
-        letterF.textContent = letter.textContent.toUpperCase();
+        letter.textContent = letter.textContent.toUpperCase();
       }
     });
   };
 
   changeToLowerCase(keys) {
     keys.forEach((letter) => {
-      const letterF = letter;
       if (!letter.classList.contains('tap-shift') && !letter.classList.contains('special')) {
-        letterF.textContent = letter.textContent.toLowerCase();
+        letter.textContent = letter.textContent.toLowerCase();
       }
     });
   };
 
   tapOnShiftSpecial(keys) {
     keys.forEach((key) => {
-      const keyS = key;
       const supKeyContent = key.querySelector('sup').textContent;
       const spanKeyContent = key.querySelector('span').textContent;
-      keyS.querySelector('sup').textContent = spanKeyContent;
-      keyS.querySelector('span').textContent = supKeyContent;
+      key.querySelector('sup').textContent = spanKeyContent;
+      key.querySelector('span').textContent = supKeyContent;
     });
   };
 

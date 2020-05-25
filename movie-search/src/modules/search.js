@@ -4,7 +4,9 @@ import { getMovieCards } from './movie-cards';
 import getTranslateTitle from './translation';
 
 const searchHandler = (ev) => {
-  if (ev) ev.preventDefault();
+  if (ev) {
+    ev.preventDefault();
+  }
   const inputSearchValue = INPUT_SEARCH.value;
   if (inputSearchValue === '') {
     return;

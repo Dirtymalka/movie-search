@@ -11,14 +11,14 @@ document.addEventListener("DOMContentLoaded", () => {
   localStorage.setItem(constants.PAGE_NUMBER, constants.DEFAULT_PAGE);
   getMovieCards(constants.DEFAULT_FILM_NAME, constants.DEFAULT_PAGE);
 
-  const keyboard = new Keyboard;
+  const keyboard = new Keyboard();
   keyboard.createKeyboardContainer();
   keyboard.init();
   document.querySelector('.keyboard').onclick = keyboard.addClassActive;
 
-  constants.BUTTON_SEARCH.onclick = searchHandler;
+  document.querySelector('.search-button').onclick = searchHandler;
 
-  constants.MICROPHONE.onclick = addMicrophoneHandler;
+  document.querySelector('.micro').onclick = addMicrophoneHandler;
   recognition.onresult = addSpeakHandler;
 
   constants.CLEAR_BUTTON.onclick = () => {

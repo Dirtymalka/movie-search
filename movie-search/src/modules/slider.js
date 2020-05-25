@@ -1,5 +1,3 @@
-import Swiper from 'swiper';
-
 const swiper = new Swiper(document.querySelector('.swiper-container'), {
   init: false,
   dynamicBullets: true,

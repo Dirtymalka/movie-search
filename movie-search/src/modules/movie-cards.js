@@ -1,17 +1,17 @@
-import { INPUT_SEARCH, FILM_NAME, PAGE_NUMBER, DEFAULT_PAGE, DEFAULT_FILM_NAME } from './constants';
+/* eslint no-param-reassign: 'error' */
+
+import { INPUT_SEARCH, FILM_NAME, PAGE_NUMBER, DEFAULT_PAGE, DEFAULT_FILM_NAME, ERROR_MESSAGE } from './constants';
 import { addLoader, removeLoader } from './loader-indicator';
 import appendCards from './creatingCards';
 import swiper from './slider';
 
 
 async function getRating(card) {
-  const cardFilm = card;
-  const url = `https://www.omdbapi.com/?i=${cardFilm.imbd}&apikey=4c7b0119`;
+  const url = `https://www.omdbapi.com/?i=${card.imbd}&apikey=4e24b7f9`;
   const res = await fetch(url);
   const data = await res.json();
   const rating = await data.imdbRating;
-  cardFilm.rating = rating;
-  return rating;
+  card.rating = rating;
 }
 
 async function createCardsFilm(cards) {
@@ -24,9 +24,10 @@ async function createCardsFilm(cards) {
 function getFilms(data) {
   const cards = [];
   data.forEach(film => {
-    const movie = {};
-    movie.title = film.Title;
-    movie.year = film.Year;
+    const movie = {
+      title: film.Title,
+      year: film.Year
+    }
     if (film.Poster !== 'N/A') {
       movie.poster = film.Poster;
     } else {
@@ -44,11 +45,11 @@ async function getMovieCards(filmName, page) {
     addLoader();
   }
   try {
-    const url = `https://www.omdbapi.com/?s=${filmName}&page=${page}&apikey=4c7b0119`;
+    const url = `https://www.omdbapi.com/?s=${filmName}&page=${page}&apikey=4e24b7f9`;
     const res = await fetch(url);
     const data = await res.json();
-    if (data.Response === "False") {
-      if (localStorage.getItem(PAGE_NUMBER) !== '1' && data.Error === 'Movie not found!') {
+    if (data.Response === 'False') {
+      if (localStorage.getItem(PAGE_NUMBER) !== '1' && data.Error === ERROR_MESSAGE) {
         return;
       }
       removeLoader();

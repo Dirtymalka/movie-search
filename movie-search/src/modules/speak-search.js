@@ -1,5 +1,4 @@
 import searchHandler from './search';
-import { INPUT_SEARCH } from './constants'
 
 const SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
 const recognition = new SpeechRecognition();
@@ -14,7 +13,7 @@ const addMicrophoneHandler = () => {
 }
 
 const addSpeakHandler = (e) => {
-  INPUT_SEARCH.value = e.results[0][0].transcript;
+  document.querySelector('.search-input').value = e.results[0][0].transcript;
   searchHandler();
   document.querySelector('.micro').classList.remove('active');
 }
